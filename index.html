@@ -8,10 +8,270 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="funciones/funciones.js"></script>
-    <title>Aqui va su titulo</title>
+    <title>Lista de Veterinaria</title>
 </head>
 
 <body>
+    <section class="content">
+        <!-- INICIA Main content -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title">Crud Veterinaria</h3>
+              </div>
+              <div class="box-body">
+                <button type="button" class="btn btn-default" id="btnAbrirGuardar">
+                  Guardar
+                </button>
+  
+                <!--INICIAN MODALS GUARDAR-->
+                <div class="modal fade" id="modalGuardar">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">ALTA DE MASCOTAS</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!--INICIA FORMULARIO-->
+                        <form role="form">
+                          <div class="box-body">
+                            <div class="form-group">
+                              <label for="idVeterinaria">Id Veterinaria</label>
+                              <input type="number" class="form-control" id="idVeterinaria" placeholder="Ingrese el Id">
+                            </div>
+                            <div class="form-group">
+                              <label for="pacientetipo">Tipo Pacinete</label>
+                              <input type="text" class="form-control" id="pacientetipo" placeholder="Ingrese el Tipo de Paciente">
+                            </div>
+  
+                            <div class="form-group">
+                              <label for="pacientetipo">Nombre</label>
+                              <input type="text" class="form-control" id="nombre" placeholder="ingrese el Nombre">
+                            </div>
+  
+                            <div class="form-group">
+                              <label for="edad">Edad</label>
+                              <input type="text" class="form-control" id="edad" placeholder="Ingrese la Edad">
+                            </div>
+  
+                            <div class="form-group">
+                              <label for="peso">Peso</label>
+                              <input type="number" class="form-control" id="peso" placeholder="Indique el peso">
+                            </div>
+  
+                            <div class="form-group">
+                              <label for="fechaingreso">Fecha de Ingreso</label>
+                              <input type="number" class="form-control" id="fechaingreso" placeholder="Indica la Fecha de Ingreso">
+                            </div>  
+                            
+                            <div class="form-group">
+                                <label for="fechasalida">Fecha de Salida</label>
+                                <input type="number" class="form-control" id="fechasalida" placeholder="Indica la Fecha de Salida">
+                              </div>                  
+                          </div>
+                          <!-- /.box-body -->
+                        </form>
+                        <!--FINALIZA FORMULARIO-->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+                <!--CIERRA MODALS GUARDAR--> 
+                
+                <!--INICIA MODAL ELIMINAR-->              
+                <div class="modal fade" id="modalEliminar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">ELIMINACION DE MASCOTAS</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!--INICIA FORMULARIO-->
+                          <form role="form">
+                            <div class="box-body">
+                              <div class="form-group">
+                                <label for="idVeterinaria">Id Veterinaria</label>
+                                <input type="number" class="form-control" id="idVeterinariaD" placeholder="Ingrese el Id">
+                              </div>
+                              <div class="form-group">
+                                <label for="pacientetipo">Tipo Pacinete</label>
+                                <input type="text" class="form-control" id="pacientetipoD" placeholder="Ingrese el Tipo de Paciente">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="pacientetipo">Nombre</label>
+                                <input type="text" class="form-control" id="nombreD" placeholder="ingrese el Nombre">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input type="text" class="form-control" id="edadD" placeholder="Ingrese la Edad">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="peso">Peso</label>
+                                <input type="number" class="form-control" id="pesoD" placeholder="Indique el peso">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="fechaingreso">Fecha de Ingreso</label>
+                                <input type="number" class="form-control" id="fechaingresoD" placeholder="Indica la Fecha de Ingreso">
+                              </div>  
+                              
+                              <div class="form-group">
+                                  <label for="fechasalida">Fecha de Salida</label>
+                                  <input type="number" class="form-control" id="fechasalidaD" placeholder="Indica la Fecha de Salida">
+                                </div>                  
+                            </div>
+                            <!-- /.box-body -->
+                          </form>
+                          <!--FINALIZA FORMULARIO-->
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="btnEliminar">Eliminar</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->               
+                <!--FINALIZA MODAL ELIMINAR-->
+                
+                <!--INICIA MODAL EDITAR-->              
+                <div class="modal fade" id="modalEditar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">EDITAR MASCOTAS</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!--INICIA FORMULARIO-->
+                          <form role="form">
+                            <div class="box-body">
+                              <div class="form-group">
+                                <label for="idVeterinaria">Id Veterinaria</label>
+                                <input type="number" class="form-control" id="idVeterinariaU" placeholder="Ingrese el Id">
+                              </div>
+                              <div class="form-group">
+                                <label for="pacientetipo">Tipo Pacinete</label>
+                                <input type="text" class="form-control" id="pacientetipoU" placeholder="Ingrese el Tipo de Paciente">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="pacientetipo">Nombre</label>
+                                <input type="text" class="form-control" id="nombreU" placeholder="ingrese el Nombre">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input type="text" class="form-control" id="edadU" placeholder="Ingrese la Edad">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="peso">Peso</label>
+                                <input type="number" class="form-control" id="pesoU" placeholder="Indique el peso">
+                              </div>
+    
+                              <div class="form-group">
+                                <label for="fechaingreso">Fecha de Ingreso</label>
+                                <input type="number" class="form-control" id="fechaingresoU" placeholder="Indica la Fecha de Ingreso">
+                              </div>  
+                              
+                              <div class="form-group">
+                                  <label for="fechasalida">Fecha de Salida</label>
+                                  <input type="number" class="form-control" id="fechasalidaU" placeholder="Indica la Fecha de Salida">
+                                </div>                  
+                            </div>
+                            <!-- /.box-body -->
+                          </form>
+                          <!--FINALIZA FORMULARIO-->
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" id="btnEditar">EDITAR</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                <!-- /.modal -->               
+                <!--FINALIZA MODAL EDITAR-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FINALIZA Main content -->
+  
+        <div class="alert alert-success" style="display: none;"></div>
+        <div class="alert alert-danger" style="display: none;"></div>
+        <div class="alert alert-warning" style="display: none;"></div>
+  
+        <!--INICIA TABLA-->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Registro de Mascotas</h3>
+  
+                <div class="box-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+  
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>TIPO PACIENTE</th>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                    <th>PESO</th>
+                    <th>FECHA DE INGRESO</th>
+                    <th>FECHA DE SALIDA</th>
+                    
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                  </tr> 
+                </thead>
+                <tbody id="CuerpoT"></tbody>           
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+        </div>
+        <!--CIERRA TABLA-->
+   
+      </section>
 
     <!-- 
 DB
